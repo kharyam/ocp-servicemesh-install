@@ -1,8 +1,12 @@
 #!/bin/bash
 
 # Create required namespaces. Using yaml since oc new-project will not create openshift-* namespaaces
-oc apply -f openshift-operators-redhat.yaml
-oc apply -f openshift-distributed-tracing.yaml
+oc apply -f openshift-operators-redhat-namespace.yaml
+oc apply -f openshift-distributed-tracing-namespace.yaml
+
+# Create operator groups 
+oc apply -f openshift-distributed-tracing-operator-group.yaml
+oc apply -f openshift-operators-redhat-operator-group.yaml
 
 # Dynamically get the latest stable version for each operator and insstall it
 for operator in elasticsearch-operator jaeger-product kiali-ossm servicemeshoperator

@@ -1,0 +1,9 @@
+kind: OperatorGroup
+apiVersion: operators.coreos.com/v1
+metadata:
+  name: og-jaeger
+  namespace: openshift-operators-redhat
+spec:
+  targetNamespaces:
+  - openshift-operators-redhat
+
