@@ -1,8 +1,9 @@
 # OCP Service Mesh Install
+Example installation of the service mesh operator (plus supporting operators) along with installation of a control plane with an auto-scaling ingress gateway.
 
-# Directories
+## Directories
 
-## install-operators
+### install-operators
 Example instalation of service mesh via the command line. Do not install the yaml files directly but instead run the provided `install.sh` script
 * install.sh
   * Creates namespaces required by the jaeger and elasticsearch operators
@@ -11,7 +12,7 @@ Example instalation of service mesh via the command line. Do not install the yam
 
 View the `install.sh` script for more detail.
 
-## install-smcp
+### install-control-plane
 Example installation of a service mesh control plane (smcp). The ingress gateway is configured to autoscale with a min of 2 replicas and max of 5. 
 
 * Update **smcp.yaml** with any customized parameters beyond what is there by default. e.g., cpu/memory parameters, replica counts, etc.  See https://docs.openshift.com/container-platform/4.10/service_mesh/v2x/ossm-reference-smcp.html for configuration options. 
