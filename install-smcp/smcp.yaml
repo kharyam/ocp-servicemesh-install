@@ -1,0 +1,48 @@
+apiVersion: maistra.io/v2
+kind: ServiceMeshControlPlane
+metadata:
+  name: smcp
+spec:
+  tracing:
+    type: Jaeger
+    sampling: 10000
+  gateways:
+    ingress:
+      runtime:
+        deployment:
+          autoScaling:
+            enabled: true
+            minReplicas: 2
+            maxReplicas: 5
+            targetCPUUtilizationPercentage: 80
+          replicas: 2
+        container:
+          resources:
+            requeists:
+              cpu: 500m
+              memory: 1Gi
+            limits: 
+              cpu: 500m
+              memory: 1Gi
+      enabled: true
+      ingress: true
+    openshiftRoute:
+      enabled: true
+    enabled: true
+  policy:
+    type: Istiod
+  addons:
+    grafana:
+      enabled: true
+    jaeger:
+      install:
+        storage:
+          type: Memory
+    kiali:
+      enabled: true
+    prometheus:
+      enabled: true
+  telemetry:
+    type: Istiod
+  version: v2.2
+
