@@ -1,0 +1,15 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:
+  app.kubernetes.io/name: servicemesh
+  app.kubernetes.io/component: servicemesh
+resources:
+  - openshift-operators-redhat-namespace.yaml
+  - openshift-distributed-tracing-namespace.yaml
+  - openshift-distributed-tracing-operator-group.yaml
+  - openshift-operators-redhat-operator-group.yaml
+  - elasticsearch-operator.yaml
+  - jaeger-product.yaml
+  - kiali-ossm.yaml
+  - servicemeshoperator.yaml
