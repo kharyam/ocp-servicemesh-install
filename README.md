@@ -3,13 +3,13 @@
 # Directories
 
 ## install-operators
-Example instalation of service mesh via the command line. Do not install the yaml files directly but instead run the provided `install.sh` script
-* install.sh
-  * Creates namespaces required by the jaeger and elasticsearch operators
-  * Creates operator groups required by the jaeger and elasticsearch operators
-  * Installs the latest stable versions of the elasticsearch, jaeger, kiali, and servicemesh operators provided by Red Hat
+Example instalation of service mesh via the command line using kustomize
 
-View the `install.sh` script for more detail.
+```
+git clone https://github.com/kharyam/ocp-servicemesh-install.git 
+cd ocp-servicemesh-install
+oc apply -k install-operators
+```
 
 ## install-smcp
 Example installation of a service mesh control plane (smcp). The ingress gateway is configured to autoscale with a min of 2 replicas and max of 5. 
@@ -20,6 +20,8 @@ Example installation of a service mesh control plane (smcp). The ingress gateway
 ```
 export SMCP_NAMESPACE=my-control-plane-namespace
 oc new-project $SMCP_NAMESPACE
-oc apply -f smcp.yaml -n $SMCP_NAMESPACE
-oc apply -f smmr.yaml -n $SMCP_NAMESPACE
+
+git clone https://github.com/kharyam/ocp-servicemesh-install.git
+cd ocp-servicemesh-install
+oc apply -k install-smcp -n $SMCP_NAMESPACE 
 ```

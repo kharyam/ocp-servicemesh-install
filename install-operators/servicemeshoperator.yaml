@@ -9,4 +9,3 @@ spec:
   name: servicemeshoperator
   source: redhat-operators
   sourceNamespace: openshift-marketplace
-  startingCSV: OPERATOR_VERSION
