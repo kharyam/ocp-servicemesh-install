@@ -4,7 +4,7 @@ Example installation of the service mesh operator (plus supporting operators) al
 ## [Service Mesh Operators Installation](install-operators)
 Example instalation of service mesh via the command line using kustomize. This will install the service mesh operator along with any required operators.
 
-```
+```bash
 git clone https://github.com/kharyam/ocp-servicemesh-install.git 
 cd ocp-servicemesh-install
 oc apply -k install-operators
