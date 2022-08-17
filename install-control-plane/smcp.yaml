@@ -18,7 +18,7 @@ spec:
           replicas: 2
         container:
           resources:
-            requeists:
+            requests:
               cpu: 500m
               memory: 1Gi
             limits: 
