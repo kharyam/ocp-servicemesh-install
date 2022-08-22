@@ -2,8 +2,12 @@
 Example installation of the service mesh operator (plus supporting operators) along with installation of a control plane with an auto-scaling ingress gateway.
 
 ## [Service Mesh Operators Installation](install-operators)
-Example instalation of service mesh via the command line using kustomize. This will install the service mesh operator along with any required operators.
+Example instalation of service mesh via the command line using kustomize. This will install the service mesh operator along with the required supporting operators:
+- Kiali
+- Jaeger
+- Elasticsearch
 
+As an admin user:
 ```bash
 git clone https://github.com/kharyam/ocp-servicemesh-install.git 
 cd ocp-servicemesh-install
